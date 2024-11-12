@@ -10,7 +10,7 @@ function KeyBoard() {
   ]
 
 
-  let l= letters.map((l:any)=>{
+  let allLetters= letters.map((l:any)=>{
     return(    
     <Key letter={l}></Key>
     );
@@ -19,9 +19,9 @@ function KeyBoard() {
 
   return (
     <>
-<div className="keyboard">
-  {l}
-</div>
+      <div className="keyboard">
+        {allLetters}
+      </div>
     </>
   )
 }

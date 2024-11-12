@@ -1,48 +1,32 @@
 import './WordsView.css'
+import SingleWord from './SingleWord'
 
-function App() {
+function WordsView(props:any) {
+
+
+  let wordsArray = []
+  for (let key of props.WordsDict.keys()) {
+    wordsArray.push(key);
+  }
+
+  for(let i =0 ; wordsArray.length < 6; i++){
+    wordsArray.push("");
+   }
+
+  let varrr = wordsArray.map((word:any)=>{    
+    return(
+      <SingleWord word={word} color={props.WordsDict.get(word)}></SingleWord>
+    );
+  })
+
 
   return (
     <div className="grid">
-    <text className="tile">f</text>
-    <div className="tile">d</div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-  
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-  
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-  
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-  
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-  
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-    <div className="tile"></div>
-  </div>
+      {varrr}
+    </div>
   
     
   )
 }
 
-export default App
+export default WordsView
