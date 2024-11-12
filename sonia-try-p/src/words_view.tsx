@@ -1,9 +1,11 @@
 import './WordsView.css'
 import SingleWord from './SingleWord'
+import { useCallback, useEffect } from 'react';
 
 function WordsView(props:any) {
 
-
+  KeyPress(props.OnClick);
+  
   let wordsArray = []
   for (let key of props.WordsDict.keys()) {
     wordsArray.push(key);
@@ -13,16 +15,16 @@ function WordsView(props:any) {
     wordsArray.push("");
    }
 
-  let varrr = wordsArray.map((word:any)=>{    
+  let allWords = wordsArray.map((word:any)=>{    
     return(
-      <SingleWord word={word} color={props.WordsDict.get(word)}></SingleWord>
+      <SingleWord word={word} colors={props.WordsDict.get(word)}></SingleWord>
     );
   })
 
 
   return (
     <div className="grid">
-      {varrr}
+      {allWords}
     </div>
   
     
@@ -30,3 +32,19 @@ function WordsView(props:any) {
 }
 
 export default WordsView
+
+function KeyPress(onClickFunc){
+  const handleKeyPress = useCallback((event:KeyboardEvent) => {
+    console.log(`Key pressed: ${event.key}`);
+    onClickFunc(event.key)
+
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
+}

@@ -1,4 +1,5 @@
 import SingleKey from './SingleKey'
+import Color from './Color'
 
 function SingleWord(props:any) {
    
@@ -15,9 +16,17 @@ function SingleWord(props:any) {
     }
 
 
-     let wordd = letterArray.map((letter:any)=>{
+     let wordd = letterArray.map((letter:any, index:number)=>{
+        // console.log(index+" index "+" letter "+ letter)
+        let color:any;
+        if(letter == undefined){
+            color = Color.White
+        }
+        else{
+            color = props.colors[index]
+        }
         return (
-            <SingleKey id="present"letter={letter}></SingleKey>
+            <SingleKey Letter={letter} LetterColor={color}></SingleKey>
         );
     })
   return (
