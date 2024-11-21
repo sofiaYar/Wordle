@@ -1,0 +1,10 @@
+/* לוח המשחק */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 50px); 
+    grid-template-rows: repeat(6, 50px); 
+    gap: 10px;
+    margin: 20px 0;
+    margin-right: 70px;
+     direction: rtl; 
+  }

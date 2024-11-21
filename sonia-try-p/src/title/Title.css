@@ -1,0 +1,21 @@
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* מרכז את הכותרת והמידע אופקית */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  margin-top: 5px;
+}
+
+#info {
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: lightgray;
+  margin-top: 10px;
+}
