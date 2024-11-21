@@ -10,14 +10,9 @@ export interface CursorPosition {
   letterIndex: number;
 }
 
-export interface KeyRepresentation {
-    displayLabel: string;
-    keyCode: string;
-    //keyColor: Colors;
-  }
-  
+
+    
   export interface KeyInformation {
     displayLabel: string;
     keyColor: Colors;
-    //keyColor: Colors;
   }
