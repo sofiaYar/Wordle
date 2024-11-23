@@ -44,8 +44,11 @@ function WordsBase() {
       updatedBoard = insertLetter(words, key);
     } else if (key === "Enter") {
       updatedBoard = sendWord(words, data.todaysWord, data.words);
-      const updatedLetters = updateKeyboardColors(updatedBoard, letters);
-      setLetters(updatedLetters);
+      if(updatedBoard !=words){
+        const updatedLetters = updateKeyboardColors(updatedBoard, letters);
+        setLetters(updatedLetters);
+      }
+      
 
       if (checkWinCondition(updatedBoard)) {
         setIsGameWon(true); 
